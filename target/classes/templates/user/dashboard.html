@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" th:replace="~{base :: parent(~{::#content})}">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${LoggedInUser.name}+' | DASHBOARD"></title>
+</head>
+
+<body>
+    <div id="content">
+        <div th:if="${LoggedInUser}">
+            <div th:replace="~{user/sidebar :: sidebar}"></div>
+        </div>
+        <div class="pl-64">
+            <h1 class="flex justify-center text-5xl">This is Dashboard</h1>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum laudantium quia tenetur ex eaque temporibus
+            sed id vel voluptate asperiores porro quo ab voluptates culpa tempora corporis enim, provident, voluptatem,
+            illum distinctio earum. Quos perferendis corporis quaerat voluptate doloremque, officiis ad neque, laborum
+            dolor aliquid suscipit totam quia voluptatibus perspiciatis esse fuga, iusto quod nihil ullam dolorum
+            inventore voluptas! Minima officiis quibusdam earum. Explicabo omnis reiciendis quidem, nobis, iusto
+            repellat ea repellendus libero aspernatur rerum unde sint laboriosam! Optio obcaecati reiciendis adipisci
+            sint ipsa perferendis exercitationem fugit nihil. Fuga inventore adipisci non numquam voluptate a fugiat
+            omnis esse est soluta.
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" th:replace="~{base :: parent(~{::#content})}">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${LoggedInUser.name}+' | SCM"></title>
+</head>
+
+<body>
+    <div id="content">
+        <div th:if="${LoggedInUser}">
+            <div th:replace="~{user/sidebar :: sidebar}"></div>
+        </div>
+        <div class="sm:pl-64 flex justify-center">
+            <div class="flex flex-col items-center justify-center max-w-2xl w-full bg-white dark:bg-gray-800 shadow-lg rounded-lg overflow-hidden">
+                <!-- Profile Picture and Basic Info -->
+                <img class="h-44 w-44 rounded-full"
+                    th:onerror="https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg?semt=ais_hybrid"
+                    th:src="@{${LoggedInUser.profilePic}}" alt="profile pic">
+                <div class="p-6 flex items-center space-x-4">
+                    <!-- <img class="h-24 w-24 rounded-full object-cover border-4 border-gray-700"
+                        src="path/to/profilePic.jpg" alt="Profile Picture"> -->
+                    <div>
+                        <h1 class="text-2xl font-semibold" th:text="${LoggedInUser.name}">{{name}}</h1>
+                        <p class="text-gray-300" th:text="${LoggedInUser.email}">{{email}}</p>
+                        <p class="text-gray-300" th:text="${LoggedInUser.phoneNumber}">{{phoneNumber}}</p>
+                    </div>
+                </div>
+
+                <!-- About Section -->
+                <div class="p-6">
+                    <h2 class="text-xl font-semibold">About</h2>
+                    <p class="text-gray-300 mt-2" th:text="${LoggedInUser.about}">{{about}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
