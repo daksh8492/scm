@@ -32,10 +32,10 @@
 //     contactModal.show();
 // }
 
+const baseUrl = "http://localhost:8080"
 
 document.addEventListener('DOMContentLoaded', () => {
     console.log("hello");
-    const baseUrl = "http://localhost:8080"
 
     const viewContactModal = document.getElementById("view_contact_modal");
 
